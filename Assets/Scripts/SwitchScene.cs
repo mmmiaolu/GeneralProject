@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class SwitchScene : MonoBehaviour {
@@ -29,7 +30,10 @@ public class SwitchScene : MonoBehaviour {
 				SceneManager.LoadScene("Game3");
 				break;
 			case "return":
-				SceneManager.LoadScene("Main Scene");
+                GameObject.Find("pause").GetComponent<CanvasGroup>().alpha = 1;
+                GameObject.Find("pause").GetComponent<CanvasGroup>().interactable = true;
+                GameObject.Find("pause").GetComponent<CanvasGroup>().blocksRaycasts = true;
+                Time.timeScale = 0;
 				break;
 			case "left_collider":
 				moveHeroes("leftHero");

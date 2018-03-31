@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - stone
+  - rightHero
+  - leftHero
+  - wall
+  - score
+  - hscore
+  - mscore
+  - brestart
+  - breturn
   layers:
   - Default
   - TransparentFX
