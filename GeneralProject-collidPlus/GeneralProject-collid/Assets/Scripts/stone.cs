@@ -3,15 +3,18 @@ using System.Collections;
 
 public class stone : MonoBehaviour {
     public int m_point = 1;
+    public static bool absorbl = false;
+    public static bool absorbr = false;
     public GameObject explosion;
+    public Vector3 _position;
 	// Use this for initialization
 	void Start () {
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+
+    }
 
 	void OnBecameInvisible()  
 	{  
@@ -36,6 +39,15 @@ public class stone : MonoBehaviour {
             {
                 Game1Manager.Instance.AddScore(m_point);
                 Destroy(this.gameObject);
+                _position = this.transform.position;
+                if (_position.x == -3)
+                {
+                    absorbl = true;//left
+                }
+                else
+                {
+                    absorbr = true;//right
+                }
             }
             if (other.tag.CompareTo("rightHero") == 0)
             {

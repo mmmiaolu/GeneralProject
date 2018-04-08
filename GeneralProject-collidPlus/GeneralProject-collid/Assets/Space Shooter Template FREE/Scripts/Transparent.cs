@@ -7,9 +7,15 @@ public class Transparent : MonoBehaviour {
     public int score;
     public int myscore;
     public float interval;
-    // Use this for initialization
+    public Animation plusone;
+
     void Start () {
         Hide();
+        plusone = GetComponent<Animation>();
+        if(plusone.isPlaying)
+        {
+            plusone.Stop();
+        }
         score = int.Parse(GameObject.FindGameObjectWithTag("score").GetComponent<Text>().text);
         myscore = 0;
     }
@@ -38,9 +44,19 @@ public class Transparent : MonoBehaviour {
             Hide();
         }
     }
+
     // Update is called once per frame
     void Update () {
         score = int.Parse(GameObject.FindGameObjectWithTag("score").GetComponent<Text>().text);
-        StartCoroutine(Transp());
+        //StartCoroutine(Transp());
+        if (myscore < score)
+        {
+            myscore++;
+            if (plusone.isPlaying)
+            {
+                plusone.Stop();
+            }
+            plusone.Play();
+        }
     }
 }

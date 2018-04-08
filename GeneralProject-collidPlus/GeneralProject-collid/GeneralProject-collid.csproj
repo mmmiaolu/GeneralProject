@@ -246,6 +246,8 @@
     <Compile Include="Assets\Scripts\stone.cs" />
     <Compile Include="Assets\Scripts\stoneSpawn.cs" />
     <Compile Include="Assets\Scripts\SwitchScene.cs" />
+    <Compile Include="Assets\Space Shooter Template FREE\Scripts\absorbleft.cs" />
+    <Compile Include="Assets\Space Shooter Template FREE\Scripts\absorbright.cs" />
     <Compile Include="Assets\Space Shooter Template FREE\Scripts\Bonus.cs" />
     <Compile Include="Assets\Space Shooter Template FREE\Scripts\Boundary.cs" />
     <Compile Include="Assets\Space Shooter Template FREE\Scripts\DestroybyContact.cs" />
