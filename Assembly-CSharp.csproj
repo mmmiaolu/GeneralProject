@@ -59,10 +59,14 @@
      <Compile Include="Assets\Scripts\BtnRestart.cs" />
      <Compile Include="Assets\Scripts\BtnReturn.cs" />
      <Compile Include="Assets\Scripts\Game1Manager.cs" />
+     <Compile Include="Assets\Scripts\left_stoneSpawn.cs" />
+     <Compile Include="Assets\Scripts\right_stoneSpawn.cs" />
      <Compile Include="Assets\Scripts\state.cs" />
      <Compile Include="Assets\Scripts\stone.cs" />
      <Compile Include="Assets\Scripts\stoneSpawn.cs" />
      <Compile Include="Assets\Scripts\SwitchScene.cs" />
+     <Compile Include="Assets\Space Shooter Template FREE\Scripts\absorbleft.cs" />
+     <Compile Include="Assets\Space Shooter Template FREE\Scripts\absorbright.cs" />
      <Compile Include="Assets\Space Shooter Template FREE\Scripts\Bonus.cs" />
      <Compile Include="Assets\Space Shooter Template FREE\Scripts\Boundary.cs" />
      <Compile Include="Assets\Space Shooter Template FREE\Scripts\DestroybyContact.cs" />

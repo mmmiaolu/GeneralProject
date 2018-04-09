@@ -11,7 +11,7 @@ public class Game1Manager : MonoBehaviour {
     public int m_score = 0;
     //记录
     public static int m_hiscore = 0;
-    //游戏结束判断,使用此方法，导致重新开始游戏，无法正常运行，故舍弃。
+    //游戏结束判断
     //public bool flag = false;
 
     
@@ -36,8 +36,6 @@ public class Game1Manager : MonoBehaviour {
 
         //分数
         GameObject.FindGameObjectWithTag("score").GetComponent<Text>().text = m_score.ToString();
-
-        
 
     }
     //void OnGuI()
@@ -103,17 +101,14 @@ public class Game1Manager : MonoBehaviour {
 
     public void final()
     {
-        //游戏结束
-        //if (flag)
-        //{
-            GameObject.FindGameObjectWithTag("mscore").GetComponent<Text>().text = m_score.ToString();
-            GameObject.FindGameObjectWithTag("hscore").GetComponent<Text>().text = m_hiscore.ToString();
-            GameObject.Find("final").GetComponent<CanvasGroup>().alpha = 1;
-            GameObject.Find("final").GetComponent<CanvasGroup>().interactable = true;
-            GameObject.Find("final").GetComponent<CanvasGroup>().blocksRaycasts = true;
-            Time.timeScale = 0;
-        //}
+        Time.timeScale = 0;
+        GameObject.FindGameObjectWithTag("mscore").GetComponent<Text>().text = m_score.ToString();
+        GameObject.FindGameObjectWithTag("hscore").GetComponent<Text>().text = m_hiscore.ToString();
+        GameObject.Find("final").GetComponent<CanvasGroup>().alpha = 1;
+        GameObject.Find("final").GetComponent<CanvasGroup>().interactable = true;
+        GameObject.Find("final").GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
+
     //增加分数
     public void AddScore( int point )
     {

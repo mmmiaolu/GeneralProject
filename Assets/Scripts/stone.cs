@@ -1,18 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
 
 public class stone : MonoBehaviour {
     public int m_point = 1;
+    public static bool absorbl = false;
+    public static bool absorbr = false;
     public GameObject explosion;
+    public Vector3 _position;
 	// Use this for initialization
 	void Start () {
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+
+    }
 
 	void OnBecameInvisible()  
 	{  
@@ -38,16 +40,26 @@ public class stone : MonoBehaviour {
             {
                 Game1Manager.Instance.AddScore(m_point);
                 Destroy(this.gameObject);
+                _position = this.transform.position;
+                if (_position.x == -3)
+                {
+                    absorbl = true;//left
+                }
+                else
+                {
+                    absorbr = true;//right
+                }
             }
             if (other.tag.CompareTo("rightHero") == 0)
             {
                 Instantiate(explosion, other.transform.position, other.transform.rotation);
-                //Destroy(this.gameObject);
                 this.gameObject.SetActive(false);
-                //Destroy(other.gameObject);
+                //Destroy(this.gameObject);
                 other.gameObject.SetActive(false);
-                //Game1Manager.Instance.flag = true;
                 Game1Manager.Instance.final();
+                //Destroy(other.gameObject);
+                //Game1Manager.Instance.flag = true;
+
             }
         }
         

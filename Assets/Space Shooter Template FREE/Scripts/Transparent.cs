@@ -6,10 +6,16 @@ using UnityEngine.UI;
 public class Transparent : MonoBehaviour {
     public int score;
     public int myscore;
-    public float interval;
-    // Use this for initialization
+    //public float interval;
+    public Animation plusone;
+
     void Start () {
         Hide();
+        plusone = GetComponent<Animation>();
+        if(plusone.isPlaying)
+        {
+            plusone.Stop();
+        }
         score = int.Parse(GameObject.FindGameObjectWithTag("score").GetComponent<Text>().text);
         myscore = 0;
     }
@@ -28,19 +34,29 @@ public class Transparent : MonoBehaviour {
         GetComponent<SpriteRenderer>().color = _color;
     }
 
-    IEnumerator Transp()
-    {
-        if(myscore < score)
-        {
-            myscore++;
-            Show();
-            yield return new WaitForSeconds(interval);
-            Hide();
-        }
-    }
+    //IEnumerator Transp()
+    //{
+    //    if(myscore < score)
+    //    {
+    //        myscore++;
+    //        Show();
+    //        yield return new WaitForSeconds(interval);
+    //        Hide();
+    //    }
+    //}
+
     // Update is called once per frame
     void Update () {
         score = int.Parse(GameObject.FindGameObjectWithTag("score").GetComponent<Text>().text);
-        StartCoroutine(Transp());
+        //StartCoroutine(Transp());
+        if (myscore < score)
+        {
+            myscore++;
+            if (plusone.isPlaying)
+            {
+                plusone.Stop();
+            }
+            plusone.Play();
+        }
     }
 }

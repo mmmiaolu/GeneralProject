@@ -2,6 +2,7 @@ Android
 PlayerPath?
 C:/Users/Administrator/Desktop/GameDesign/GeneralProject/test.apk
 SceneListBegin?
+Assets/Scenes/Main Scene.unity
 Assets/Scenes/Game1.unity
 SceneListEnd?
 ec9f64668f430224628b24cb4df15f91 Assembly-CSharp.dll:.PlayerShooting
@@ -166,8 +167,8 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.RotateSample
 bc6379688c1b9549a0765a54f36d8628 Assembly-CSharp.dll:.Player
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-faa3ece3f2162d631364107d3e9ced28 Assembly-CSharp.dll:.Transparent
-02169f09cbb62405777331e5c277782f Assembly-CSharp.dll:.stone
+fc3cf46a101b7b00e4381a60c17433e6 Assembly-CSharp.dll:.Transparent
+5cd217dd87d0ae8d5e57ee8e2417cb7b Assembly-CSharp.dll:.stone
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Boundary
 60d3ecd30fdbe816f0491d0116c2641b Assembly-CSharp.dll:.stoneSpawn
 dd5481137759597d614818793c90a7fe Assembly-CSharp.dll:.DirectMoving
@@ -176,3 +177,7 @@ d17986d9f62abd6e82120e567951faf6 Assembly-CSharp.dll:.PlayerMoving
 fbda83040c86f5fe1c1775327ddea422 Assembly-CSharp.dll:.Projectile
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SwitchScene
 22c6dd27812c3cd1bb06890f2914706e Assembly-CSharp.dll:.VisualEffect
+60d3ecd30fdbe816f0491d0116c2641b Assembly-CSharp.dll:.left_stoneSpawn
+60d3ecd30fdbe816f0491d0116c2641b Assembly-CSharp.dll:.right_stoneSpawn
+4e0e9ab2ed6b43d10331772aded62f85 Assembly-CSharp.dll:.absorbright
+cbad2feaabb0d9cca9dc39d4d9f2a2ea Assembly-CSharp.dll:.absorbleft
