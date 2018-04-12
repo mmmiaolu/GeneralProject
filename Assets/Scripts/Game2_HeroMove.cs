@@ -9,9 +9,10 @@ public class Game2_HeroMove : MonoBehaviour {
 	private float radiusLength;
 	private bool direction;
 	private float tempAngle;
+	private bool istouched;
 	// Use this for initialization
 	void Start () {
-		direction = true;
+		direction = false;
 		tempAngle = 0;
 		hero1 = GameObject.Find("two_star1");
 		hero2 = GameObject.Find("two_star2");
@@ -21,9 +22,13 @@ public class Game2_HeroMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//MobilePick();
+		MousePick();
+		if(!istouched)
+			return;
 		rotate(direction, Time.deltaTime);
 	}
-
+	
 	void rotate (bool direction, float deltaTime){
 		Vector3 tempPosition = new Vector3();
 		int direct = direction?1:-1;
@@ -31,7 +36,46 @@ public class Game2_HeroMove : MonoBehaviour {
 		tempPosition.x = centerPoint.x + Mathf.Cos(tempAngle) * radiusLength;
 		tempPosition.y = centerPoint.y + Mathf.Sin(tempAngle) * radiusLength;
 		tempPosition.z = 0;
-		hero1.transform.position = tempPosition;
+		hero2.transform.position = tempPosition;
+		hero1.transform.position = 2 * centerPoint - tempPosition;
 		Debug.Log(tempPosition);
 	}
+
+	void MobilePick()  {  
+		if (Input.touchCount != 1 )  
+			return;  
+	
+		if (Input.GetTouch(0).phase == TouchPhase.Began)  
+		{  
+			RaycastHit hit;  
+			Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);  
+	
+			if (Physics.Raycast(ray, out hit))  
+			{   
+				istouched = true;
+				direction = hit.transform.name=="right_collider"?true:false;
+				//funct(hit.transform.name);
+			}  
+		}  
+		else if(Input.GetTouch(0).phase == TouchPhase.Ended){
+			istouched = false;
+		}
+	} 
+	void MousePick()  {  
+		if(Input.GetMouseButtonDown(0))  
+		{  
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);  
+			RaycastHit hit;  
+	
+			if (Physics.Raycast(ray, out hit))  
+			{  
+				istouched = true;
+				direction = hit.transform.name=="right_collider"?true:false;
+				//funct(hit.transform.name);
+			}  
+		}  
+		else if (Input.GetMouseButtonUp(0)){
+			istouched = false;
+		}
+	}  
 }
