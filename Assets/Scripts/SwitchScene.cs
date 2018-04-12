@@ -56,8 +56,7 @@ public class SwitchScene : MonoBehaviour {
 		
 	}
 
-	void MobilePick()  
-	{  
+	void MobilePick()  {  
 		if (Input.touchCount != 1 )  
 			return;  
 	
@@ -67,26 +66,21 @@ public class SwitchScene : MonoBehaviour {
 			Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);  
 	
 			if (Physics.Raycast(ray, out hit))  
-			{  
-				//Debug.Log(hit.transform.name);  
-				//Debug.Log(hit.transform.tag);  
+			{   
 				funct(hit.transform.name);
 			}  
 		}  
 	} 
-	void MousePick()  
+	void MousePick()  {  
+		if(Input.GetMouseButtonUp(0))  
 		{  
-			if(Input.GetMouseButtonUp(0))  
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);  
+			RaycastHit hit;  
+	
+			if (Physics.Raycast(ray, out hit))  
 			{  
-				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);  
-				RaycastHit hit;  
-		
-				if (Physics.Raycast(ray, out hit))  
-				{  
-					//Debug.Log(hit.transform.name);  
-					//Debug.Log(hit.transform.tag);  
-					funct(hit.transform.name);
-				}  
+				funct(hit.transform.name);
 			}  
 		}  
+	}  
 }
