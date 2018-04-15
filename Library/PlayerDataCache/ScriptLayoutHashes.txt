@@ -1,8 +1,9 @@
-Android
+WindowsStandalone
 PlayerPath?
-C:/Users/Administrator/Desktop/GameDesign/GeneralProject/test.apk
+C:/Users/Administrator/Desktop/GameDesign/GeneralProject/test.exe
 SceneListBegin?
 Assets/Scenes/Main Scene.unity
+Assets/Scenes/Game2.unity
 Assets/Scenes/Game1.unity
 SceneListEnd?
 ec9f64668f430224628b24cb4df15f91 Assembly-CSharp.dll:.PlayerShooting
@@ -21,6 +22,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SampleInfo
 609883ba9b3462e00c79080cdb51d119 Assembly-CSharp.dll:.iTween
+9e83128f8ba9f6df296113eee67bc82e Assembly-CSharp.dll:.Game2_blockSpawn
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -87,6 +89,7 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 b4571f01c53bafbe69efe3a5bb55ee34 Assembly-CSharp.dll:.FollowPlayer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BtnContinue
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Game2_drawCircle
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -128,6 +131,8 @@ b6934bce25eda4589b5852b1345a7f8f Assembly-CSharp.dll:.Enemy
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BtnRestart
+6f14a66d5decc45f74398f70563f8dc1 Assembly-CSharp.dll:.Game2_block
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Game2_player
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.state
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -158,6 +163,7 @@ e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
+4e0e9ab2ed6b43d10331772aded62f85 Assembly-CSharp.dll:.absorbright
 0c0755783bd74c593d1365925aa5d060 Assembly-CSharp.dll:.PoolingController
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
@@ -167,8 +173,12 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.RotateSample
 bc6379688c1b9549a0765a54f36d8628 Assembly-CSharp.dll:.Player
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+60d3ecd30fdbe816f0491d0116c2641b Assembly-CSharp.dll:.right_stoneSpawn
+60d3ecd30fdbe816f0491d0116c2641b Assembly-CSharp.dll:.left_stoneSpawn
 fc3cf46a101b7b00e4381a60c17433e6 Assembly-CSharp.dll:.Transparent
 5cd217dd87d0ae8d5e57ee8e2417cb7b Assembly-CSharp.dll:.stone
+cbad2feaabb0d9cca9dc39d4d9f2a2ea Assembly-CSharp.dll:.absorbleft
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Game2_HeroMove
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Boundary
 60d3ecd30fdbe816f0491d0116c2641b Assembly-CSharp.dll:.stoneSpawn
 dd5481137759597d614818793c90a7fe Assembly-CSharp.dll:.DirectMoving
@@ -177,7 +187,3 @@ d17986d9f62abd6e82120e567951faf6 Assembly-CSharp.dll:.PlayerMoving
 fbda83040c86f5fe1c1775327ddea422 Assembly-CSharp.dll:.Projectile
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SwitchScene
 22c6dd27812c3cd1bb06890f2914706e Assembly-CSharp.dll:.VisualEffect
-60d3ecd30fdbe816f0491d0116c2641b Assembly-CSharp.dll:.left_stoneSpawn
-60d3ecd30fdbe816f0491d0116c2641b Assembly-CSharp.dll:.right_stoneSpawn
-4e0e9ab2ed6b43d10331772aded62f85 Assembly-CSharp.dll:.absorbright
-cbad2feaabb0d9cca9dc39d4d9f2a2ea Assembly-CSharp.dll:.absorbleft
